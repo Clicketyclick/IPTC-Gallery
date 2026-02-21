@@ -9,45 +9,48 @@ This repo is a small, self-contained PHP application for:
 - Building per-folder `metadata.json` caches for fast listing + thumbnail badges
 - Viewing a simple gallery from `metadata.json`
 
+
+> [!NOTE]  
+> Please be ware that this app was build using ChatGBT!
+>
+> It's ment as a test of the capabilities of AI anno February 2026. Proceed with care.
+>
+
 ---
 
 ## Repository layout (current)
 
 ```
 .
-├── iptc_api.php
-├── iptc_browse_editor.php
-├── iptc_browse_editor.css
-├── iptc_edit.json
-├── IMG20260215155425.json
 ├── gallery.php
-├── build_metadata.php
+├── iptc_api.php
+├── iptc_browse_editor.css
+├── iptc_browse_editor.php
+├── iptc_edit.json
+├── template_metadata.json 
+├── testbench.php 
 └── (per-folder) metadata.json
 ```
 
 ### What each file does
 
+- **`gallery.php`**  
+  Simple gallery page driven by `metadata.json`.
+
 - **`iptc_api.php`**  
   JSON API used by the editors. Handles: tree/list/read/save/build-metadata + alias mapping.
-
-- **`iptc_browse_editor.php`**  
-  Main UI: left tree + thumbnails, right preview + collapsible panels (Core IPTC / Location map / Advanced).
 
 - **`iptc_browse_editor.css`**  
   Styling for `iptc_browse_editor.php` (extracted from inline styles).
 
+- **`iptc_browse_editor.php`**  
+  Main UI: left tree + thumbnails, right preview + collapsible panels (Core IPTC / Location map / Advanced).
+
 - **`iptc_edit.json`**  
   Shared configuration (ExifTool path, default roots, map settings, icons, metadata options).
 
-- **`IMG20260215155425.json`**  
+- **`template_metadata.json`**  
   Template defining the full “ALL IPTC fields” set shown in Advanced.
-
-- **`gallery.php`**  
-  Simple gallery page driven by `metadata.json`.
-
-- **`build_metadata.php`**  
-  Optional/legacy metadata builder (reads `iptc_edit.json`).  
-  **Preferred** is API: `iptc_api.php?action=build_metadata&root=...`.
 
 - **`metadata.json`** (generated, per folder)  
   Cache of extracted metadata per directory (used for fast list + thumb overlays).

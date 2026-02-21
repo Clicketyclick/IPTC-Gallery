@@ -1,0 +1,87 @@
+{
+  "MEDIA_ROOT": ".",
+  "METADATA_JSON": "metadata.json",
+  "TEMPLATE_JSON": "template_metadata.json",
+  "EXIFTOOL_PATH": "C:/Program Files/XnViewMP/AddOn/exiftool.exe",
+  "ALLOWED_EXT": [
+    "jpg",
+    "jpeg",
+    "mp4"
+  ],
+  "LIST_PREFER_METADATA": true,
+  "LIST_SCAN_RECURSIVE": false,
+  "EXIFTOOL_READ_ARGS": [
+    "-json",
+    "-G1",
+    "-a",
+    "-s",
+    "-n",
+    "-charset",
+    "UTF8",
+    "-charset",
+    "IPTC=UTF8",
+    "-charset",
+    "EXIF=UTF8"
+  ],
+  "EXIFTOOL_WRITE_ARGS": [
+    "-overwrite_original",
+    "-charset",
+    "UTF8",
+    "-charset",
+    "IPTC=UTF8",
+    "-charset",
+    "EXIF=UTF8"
+  ],
+  "MAP": {
+    "tile_url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    "attribution": "&copy; OpenStreetMap contributors",
+    "default_lat": 55.4439,
+    "default_lng": 10.431,
+    "default_zoom": 16,
+    "default_bearing": 0,
+    "min_dir_dist_m": 8,
+    "dir_handle_dist_m": 25
+  },
+  "XMP_WRITE": {
+    "write_xmp_title": true,
+    "write_xmp_description": true,
+    "title_sources": [
+      "XMP-dc:Title",
+      "XMP:Title",
+      "IPTC:ObjectName",
+      "IPTC:Headline"
+    ],
+    "desc_sources": [
+      "XMP-dc:Description",
+      "XMP:Description",
+      "IPTC:Caption-Abstract"
+    ]
+  },
+  "GPS_READ_KEYS": {
+    "lat": [
+      "GPS:GPSLatitude",
+      "EXIF:GPSLatitude",
+      "XMP:GPSLatitude",
+      "Composite:GPSLatitude",
+      "GPSLatitude"
+    ],
+    "lng": [
+      "GPS:GPSLongitude",
+      "EXIF:GPSLongitude",
+      "XMP:GPSLongitude",
+      "Composite:GPSLongitude",
+      "GPSLongitude"
+    ],
+    "bearing": [
+      "GPS:GPSImgDirection",
+      "EXIF:GPSImgDirection",
+      "XMP:GPSImgDirection",
+      "Composite:GPSImgDirection",
+      "GPSImgDirection"
+    ],
+    "zoom": [
+      "XMP:MapZoom",
+      "MapZoom"
+    ]
+  }
+}
